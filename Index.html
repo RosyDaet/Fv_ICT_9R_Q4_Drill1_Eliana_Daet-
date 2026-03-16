@@ -10,13 +10,15 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
+<link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body class="container text-center">
 
-<h1 class="mt-4">Electricity Consumption /h1>
+<h1 class="mt-4">The classification of electricity usage</h1>
 
-<p>Enter your electricity usage.</p>
+<p>Enter your electricity usage .</p>
 
 <input type="number" id="consumption" class="form-control w-50 mx-auto" placeholder="Enter electricity usage">
 
@@ -30,6 +32,10 @@ function checkConsumption() {
 
     var consumption = document.getElementById("consumption").value;
 
+
+    consumption = Number(consumption);
+
+    // To check if the user entered a negative number or invalid input
     if (isNaN(consumption) || consumption < 0) {
         alert("Please enter a valid number.");
     }
@@ -42,9 +48,11 @@ function checkConsumption() {
         alert("Low Consumption - Normal residential rate.");
     }
 
+  
     else if (consumption <= 300) {
         alert("Average Consumption - Typical electricity usage.");
     }
+
 
     else if (consumption <= 500) {
         alert("High Consumption - Higher electricity usage.");
@@ -55,7 +63,6 @@ function checkConsumption() {
     }
 
 }
-
 </script>
 
 </body>
